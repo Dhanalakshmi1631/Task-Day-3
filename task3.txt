@@ -1,0 +1,36 @@
+TASK-DAY-3
+
+
+
+1.How to compare two JSON have the same properties without order?
+
+
+const json1 = '{"name":"Dhana","age":20}';
+
+const json2 = '{"name":"Mani","age":18}';
+
+
+function compareJSON(json1, json2) {
+
+  const obj1 = JSON.parse(json1);
+  const obj2 = JSON.parse(json2);
+  
+  if(Object.keys(obj1).length != Object.keys(obj2).length) {
+    return false;
+  }
+  
+  for(let key in obj1) {
+    if(!obj2.hasOwnProperty(key) || obj1[key] !== obj2[key]) {
+      return false;
+    }
+  }
+  
+  return true;
+}
+const result=compareJSON(json1,json2);
+console.log(result);
+
+
+
+2.
+  
